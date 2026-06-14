@@ -281,12 +281,13 @@
   }
 
   function checkCollision(rect1, rect2) {
-    const padding = scaledTile * 0.3;
+    const px1 = rect1.width * 0.2, py1 = rect1.height * 0.2;
+    const px2 = rect2.width * 0.2, py2 = rect2.height * 0.2;
     return (
-      rect1.x + padding < rect2.x + rect2.width - padding &&
-      rect1.x + rect1.width - padding > rect2.x + padding &&
-      rect1.y + padding < rect2.y + rect2.height - padding &&
-      rect1.y + rect1.height - padding > rect2.y + padding
+      rect1.x + px1 < rect2.x + rect2.width - px2 &&
+      rect1.x + rect1.width - px1 > rect2.x + px2 &&
+      rect1.y + py1 < rect2.y + rect2.height - py2 &&
+      rect1.y + rect1.height - py1 > rect2.y + py2
     );
   }
 
